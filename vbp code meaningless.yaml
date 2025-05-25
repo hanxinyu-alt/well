@@ -1,0 +1,687 @@
+抽油系统设计主窗口vb代码
+Private Sub Combo1_Click() '抽油机型号
+Combo2.Clear '清除下拉项中所有
+Combo3.Clear
+Select Case Combo1.ListIndex '根据表格将冲程、冲次、最大载荷、曲柄半径、连杆长度输入
+    Case 0
+ Combo2.AddItem "0.9" '冲程
+ Combo2.AddItem "1.2"
+ Combo2.AddItem "1.5"
+ Combo2.AddItem "1.8"
+ Combo3.AddItem "6" '冲次
+ Combo3.AddItem "9"
+ Combo3.AddItem "12"
+ Text25.Text = 50 '最大载荷、最大扭矩、连杆长度
+ Text26.Text = 13
+ Text28.Text = 2100
+Case 1
+ Combo2.AddItem "1.1"
+ Combo2.AddItem "1.5"
+ Combo2.AddItem "1.9"
+ Combo2.AddItem "2.3"
+ Combo2.AddItem "2.7"
+ Combo3.AddItem "6"
+ Combo3.AddItem "9"
+ Combo3.AddItem "12"
+ Text25.Text = 50
+ Text26.Text = 26
+ Text28.Text = 2137
+Case 2
+ Combo2.AddItem "1.8"
+ Combo2.AddItem "2.2"
+ Combo2.AddItem "2.5"
+ Combo3.AddItem "6"
+ Combo3.AddItem "9"
+ Combo3.AddItem "12"
+Text25.Text = 60
+ Text26.Text = 26
+ Text28.Text = 3200
+Case 3
+ Combo2.AddItem "2.1"
+ Combo2.AddItem "2.5"
+ Combo2.AddItem "3"
+ Combo3.AddItem "6"
+ Combo3.AddItem "9"
+ Combo3.AddItem "12"
+ Text25.Text = 80
+ Text26.Text = 48
+ Text28.Text = 3200
+Case 4
+ Combo2.AddItem "1.8"
+ Combo2.AddItem "2.2"
+ Combo2.AddItem "2.6"
+ Combo2.AddItem "3"
+ Combo3.AddItem "6"
+ Combo3.AddItem "9"
+ Combo3.AddItem "12"
+ Text25.Text = 80
+ Text26.Text = 53
+ Text28.Text = 3160
+Case 5
+ Combo2.AddItem "1.8"
+ Combo2.AddItem "2.4"
+ Combo2.AddItem "3"
+ Combo3.AddItem "6"
+ Combo3.AddItem "9"
+ Combo3.AddItem "12"
+ Text25.Text = 100
+ Text26.Text = 48
+ Text28.Text = 3300
+Case 6
+ Combo2.AddItem "2.1"
+ Combo2.AddItem "2.5"
+ Combo2.AddItem "3"
+ Combo3.AddItem "6"
+ Combo3.AddItem "9"
+ Combo3.AddItem "12"
+ Text25.Text = 100
+ Text26.Text = 53
+ Text28.Text = 3200
+Case 7
+ Combo2.AddItem "1.8"
+ Combo2.AddItem "2.2"
+ Combo2.AddItem "2.6"
+ Combo2.AddItem "3"
+ Combo3.AddItem "6"
+ Combo3.AddItem "9"
+ Combo3.AddItem "12"
+Text25.Text = 100
+ Text26.Text = 53
+ Text28.Text = 3380
+Case 8
+ Combo2.AddItem "2.1"
+ Combo2.AddItem "2.5"
+ Combo2.AddItem "3"
+ Combo3.AddItem "6"
+ Combo3.AddItem "9"
+ Combo3.AddItem "12"
+Text25.Text = 100
+ Text26.Text = 53
+ Text28.Text = 3200
+Case 9
+ Combo2.AddItem "1.58"
+ Combo2.AddItem "1.88"
+ Combo2.AddItem "2.18"
+ Combo3.AddItem "6"
+ Combo3.AddItem "8"
+ Combo3.AddItem "12"
+Text25.Text = 110
+ Text26.Text = 26
+ Text28.Text = 3260
+Case 10
+ Combo2.AddItem "2.85"
+ Combo2.AddItem "3.25"
+ Combo2.AddItem "3.66"
+ Combo3.AddItem "8"
+ Combo3.AddItem "12"
+ Text25.Text = 120
+ Text26.Text = 53
+ Text28.Text = 4295
+Case 11
+ Combo2.AddItem "2.8"
+ Combo2.AddItem "3.8"
+ Combo2.AddItem "4.8"
+ Combo3.AddItem "6"
+ Combo3.AddItem "8"
+ Combo3.AddItem "10"
+ Text25.Text = 120
+ Text26.Text = 76
+ Text28.Text = 4200
+Case 12
+ Combo2.AddItem "3"
+ Combo2.AddItem "3.6"
+ Combo2.AddItem "4.3"
+ Combo2.AddItem "5"
+ Combo3.AddItem "3"
+ Combo3.AddItem "4"
+ Combo3.AddItem "6"
+ Text25.Text = 120
+ Text26.Text = 74
+ Text28.Text = 4640
+Case 13
+ Combo2.AddItem "3.6"
+ Combo2.AddItem "4.2"
+ Combo2.AddItem "4.8"
+ Combo3.AddItem "6"
+ Combo3.AddItem "8"
+ Combo3.AddItem "10"
+Text25.Text = 140
+ Text26.Text = 73
+ Text28.Text = 3770
+Case 14
+ Combo2.AddItem "4"
+ Combo2.AddItem "5"
+ Combo3.AddItem "4"
+ Combo3.AddItem "5"
+ Combo3.AddItem "6"
+Text25.Text = 140
+ Text26.Text = 73
+ Text28.Text = 5780
+Case 15
+ Combo2.AddItem "2"
+ Combo2.AddItem "2.5"
+ Combo2.AddItem "3"
+ Combo3.AddItem "6"
+ Combo3.AddItem "9"
+ Combo3.AddItem "12"
+ Text25.Text = 160
+ Text26.Text = 300
+ Text28.Text = 2100
+End Select
+End Sub
+
+Private Sub Combo2_Click() '冲程
+Select Case Combo1.ListIndex
+Case 0
+  Select Case Combo2.ListIndex
+  Case O
+  Text27.Text = 380
+  Case 1
+  Text27.Text = 500
+  Case 2
+  Text27.Text = 620
+  Case 3
+  Text27.Text = 740
+  End Select
+Case 1
+  Select Case Combo2.ListIndex
+  Case O
+  Text27.Text = 380
+  Case 1
+  Text27.Text = 500
+  Case 2
+  Text27.Text = 620
+  Case 3
+  Text27.Text = 740
+  Case 4
+  Text27.Text = 860
+  End Select
+Case 2
+  Select Case Combo2.ListIndex
+  Case O
+  Text27.Text = 670
+  Case 1
+  Text27.Text = 990
+  Case 2
+  Text27.Text = 150
+  End Select
+Case 3
+  Select Case Combo2.ListIndex
+  Case O
+  Text27.Text = 858
+  Case 1
+  Text27.Text = 1013
+  Case 2
+  Text27.Text = 1200
+  End Select
+Case 4
+  Select Case Combo2.ListIndex
+  Case O
+  Text27.Text = 670
+  Case 1
+  Text27.Text = 810
+  Case 2
+  Text27.Text = 950
+  Case 3
+  Text27.Text = 1090
+  End Select
+Case 5
+  Select Case Combo2.ListIndex
+  Case O
+  Text27.Text = 570
+  Case 1
+  Text27.Text = 745
+  Case 2
+  Text27.Text = 895
+  End Select
+Case 6
+  Select Case Combo2.ListIndex
+  Case O
+  Text27.Text = 858
+  Case 1
+  Text27.Text = 1013
+  Case 2
+  Text27.Text = 1200
+  End Select
+Case 7
+  Select Case Combo2.ListIndex
+  Case O
+  Text27.Text = 640
+  Case 1
+  Text27.Text = 765
+  Case 2
+  Text27.Text = 890
+  Case 3
+  Text27.Text = 1015
+  End Select
+Case 8
+  Select Case Combo2.ListIndex
+  Case O
+  Text27.Text = 755
+  Case 1
+  Text27.Text = 885
+  Case 2
+  Text27.Text = 1045
+  End Select
+Case 9
+  Select Case Combo2.ListIndex
+  Case O
+  Text27.Text = 780
+  Case 1
+  Text27.Text = 922
+  Case 2
+  Text27.Text = 1064
+  End Select
+Case 10
+  Select Case Combo2.ListIndex
+  Case O
+  Text27.Text = 1074
+  Case 1
+  Text27.Text = 1227
+  Case 2
+  Text27.Text = 1380
+  End Select
+Case 11
+  Select Case Combo2.ListIndex
+  Case O
+  Text27.Text = 800
+  Case 1
+  Text27.Text = 1060
+  Case 2
+  Text27.Text = 1209
+  End Select
+Case 12
+  Select Case Combo2.ListIndex
+  Case O
+  Text27.Text = 1000
+  Case 1
+  Text27.Text = 1200
+  Case 2
+  Text27.Text = 1400
+  Case 3
+  Text27.Text = 1600
+  End Select
+Case 13
+  Select Case Combo2.ListIndex
+  Case O
+  Text27.Text = 990
+  Case 1
+  Text27.Text = 1100
+  Case 2
+  Text27.Text = 1200
+  End Select
+Case 14
+  Select Case Combo2.ListIndex
+  Case O
+  Text27.Text = 970
+  Case 1
+  Text27.Text = 1060
+  End Select
+Case 15
+  Select Case Combo2.ListIndex
+  Case O
+  Text27.Text = 600
+  Case 1
+  Text27.Text = 800
+  End Select
+End Select
+End Sub
+
+Private Sub Combo4_Click() '抽油泵选择
+Text30.Text = 44 '所选泵径
+End Sub
+
+Private Sub Command1_Click() '井温曲线
+Form2.Show
+End Sub
+
+Private Sub Command12_Click() '数据导入
+Text1.Text = 2040 '油层深度
+Text2.Text = 190  '套管内径
+Text3.Text = 88.9 '油管内径
+Text4.Text = 110 '井底温度
+Text5.Text = 15.2 '地层压力
+Text6.Text = 16.1 '饱和压力
+Text7.Text = 2.67 '传热系数
+Text8.Text = 3.11 '地温梯度
+Text9.Text = 22 '试井产液量
+Text10.Text = 10.3 '试井流压
+Text11.Text = 40 '体积含水率
+Text12.Text = 981.92 '原油密度
+Text13.Text = 1000 '地层水密度
+Text14.Text = 2223.52 '原油比热
+Text15.Text = 4253.77 '地层水比热
+Text16.Text = 240 '设计沉没度
+Text17.Text = 23 '设计排量
+Text42(0).Text = 40 '原油温度
+Text42(1).Text = 45
+Text42(2).Text = 50
+Text42(3).Text = 55
+Text42(4).Text = 60
+Text42(5).Text = 65
+Text42(6).Text = 70
+Text42(7).Text = 75
+Text42(8).Text = 80
+Text42(9).Text = 85
+Text43(0).Text = 7680 '粘度
+Text43(1).Text = 5820
+Text43(2).Text = 3740
+Text43(3).Text = 2900
+Text43(4).Text = 1720
+Text43(5).Text = 1200
+Text43(6).Text = 910
+Text43(7).Text = 730
+Text43(8).Text = 520
+Text43(9).Text = 462
+End Sub
+
+Private Sub Command10_Click() 'IPR曲线
+Form4.Show
+End Sub
+
+Private Sub Command11_Click() '拟合粘温曲线
+Dim i%, j%, lgt!(10), lgu!(10), xpj!, ypj!, xy!, x2!, a!, b!, xz!, yz
+
+For i = 0 To 9
+
+lgt(i) = Log(Val(Text42(i).Text)) / Log(10)
+Text44(i).Text = lgt(i)
+lgu(i) = Log(Val(Text43(i).Text)) / Log(10)
+Text45(i).Text = lgu(i)
+Next i
+
+For j = 0 To 9
+x = lgt(j) + x
+y = lgu(j) + y
+xy = (lgt(j) * lgu(j)) + xy
+x2 = (lgt(j)) ^ 2 + x2
+Next j
+
+
+xpj = x / 10
+ypj = y / 10
+
+
+b = (xy - 10 * xpj * ypj) / (x2 - 10 * (xpj ^ 2))
+a = ypj - b * xpj
+
+Text18.Text = a
+Text19.Text = Abs(b) '取绝对值
+Label58.Caption = "lgu=" & b & "lgt" & "+" & a
+
+End Sub
+
+Private Sub Command13_Click()
+Form5.Show
+End Sub
+Private Sub Command2_Click() '粘温曲线
+Form3.Show
+End Sub
+
+Private Sub Command4_Click() '混合液密度与泵吸入口压力计算
+Dim rou!, rouo!, rouw!, fw!, ps!, hs!
+rouo = Text12.Text '原油密度
+rouw = Text13.Text '地层水密度
+fw = Text11.Text '体积含水率
+hs = Text16.Text '设计沉没度
+rou = rouo * (1 - fw / 100) + rouw * fw / 100
+ps = rou * 9.8 * hs / 10 ^ 6
+Text21.Text = rou '混合液密度
+Text22.Text = ps '泵吸入口压力
+
+End Sub
+
+Private Sub Command5_Click() '下泵深度计算
+Dim pwf!, ps!, rou!, h!, Hp!, Lp!
+pwf = Text20.Text '井底流压
+ps = Text22.Text '泵吸入口压力
+rou = Text21.Text '混合液密度
+h = Text1.Text '油层深度
+Hp = (pwf - ps) * 10 ^ 6 / rou / 9.8
+Lp = h - Hp '泵的吸入口距油层中部距离
+Text23.Text = Hp '下泵高度
+Text24.Text = Lp '下泵深度
+End Sub
+
+
+Private Sub Command3_Click() '井底流压计算
+
+Dim qotest!, prpj!, pb!, Jo!, qc!, pwf!, qo!, pwftest!, a!, b!, pwf1
+qotest = Val(Text9.Text) '试井产液量
+pwftest = Val(Text10.Text) '试井流压
+pr = Val(Text5.Text) '地层压力
+pb = Val(Text6.Text) '饱和压力
+qo = Val(Text17.Text) '设计排量
+Jo = qotest / (pr - pwftest)
+qb = Jo * (pr - pb)
+qc = Jo * pb / 1.8
+pwf = (-0.2 * pb + (0.04 * pb ^ 2 - 3.2 * ((qo - qb) / qc - 1) * pb ^ 2) ^ 0.5) / 1.6
+Text20.Text = pwf '井底流压
+
+End Sub
+
+Private Sub Command6_Click() '计算泵径
+Dim Q!, s!, n!, η!, dp#
+Q = Text17.Text '设计排量
+s = Combo2.Text '冲程
+n = Combo3.Text '冲次
+η = 0.7
+dp = 1000 * Sqr((4 * Q) / (1440 * s * n * η * 3.14))
+dp = Fix(dp) '取函数整数部分
+Text29.Text = dp
+End Sub
+
+Private Sub Command7_Click() '抽油杆设计计算
+
+
+End Sub
+
+Private Sub Command8_Click() '校核
+Dim Mmax!, s!, Pmax!, Pmin!
+Pmax = Text36.Text '最大载荷
+Pmin = Text37.Text '最小载荷
+s = Combo2.Text '冲程
+Mmax = s / 4 * (Pmax / 1000 - Pmin / 1000)
+Text39.Text = Mmax '扭矩
+If Val(Text39.Text) > Val(Text26.Text) Then
+  Text40.Text = "不满足扭矩要求" '校核
+Else
+  Text40.Text = "满足扭矩要求" '校核
+End If
+End Sub
+
+Private Sub Command9_Click() '计算电机最大功率
+Dim Nmax!, Mmax!, n!, η!
+Mmax = Val(Text39.Text)
+n = Val(Combo3.Text)
+η = 0.9
+Nmax = Mmax * n / 9.549 / 0.9
+Text41.Text = Nmax
+End Sub
+
+
+井温曲线生成窗口代码（VB代码）
+Private Sub Command1_Click()
+Picture1.Scale (0, 0)-(220, 2400) '图表大小
+Picture1.Line (0, 0)-(120, 0) 'x轴划线
+Picture1.Line (0, 0)-(0, 2200) 'y轴划线
+For i = 0 To 120 Step 20 '以20为间隔从0循环到120
+Picture1.Line (i, 0)-(i, 20) '刻度线
+Picture1.CurrentX = i 'X坐标
+Picture1.CurrentY = 0 'Y坐标
+Picture1.Print i
+Next
+For j = 0 To 2200 Step 200 '以200为间隔从0循环到2200
+Picture1.Line (0, j)-(2, j) '刻度线
+Picture1.CurrentX = 0 'X坐标
+Picture1.CurrentY = j 'Y坐标
+Picture1.Print j
+Next
+Picture1.CurrentX = 135 'X坐标
+Picture1.CurrentY = 0 'Y坐标
+Picture1.Print "温度，℃"
+Picture1.CurrentX = 0 'X坐标
+Picture1.CurrentY = 2300 'Y坐标
+Picture1.Print "深度，m"
+
+fw = Val(Form1.Text11.Text) '取数值
+qotest = Val(Form1.Text9.Text) '取数值
+qo = Val(qotest / 86400) '取数值
+h = Val(Form1.Text1.Text) '取数值
+t0 = Val(Form1.Text4.Text) '取数值
+m = Val(Form1.Text8.Text) '取数值
+Kl = Val(Form1.Text7.Text) '取数值
+rouo = Val(Form1.Text12.Text) '取数值
+rouw = Val(Form1.Text13.Text) '取数值
+Mo = Val(Form1.Text14.Text) '取数值
+Mw = Val(Form1.Text15.Text) '取数值
+W = (qo * rouo * (1 - fw / 100) * Mo) + (qo * rouw * fw / 100 * Mw)
+
+
+For L = 0 To h Step 0.01 '以0.01为间隔从0循环到H
+ t = W * m / 100 / Kl * (1 - Exp(-Kl * (h - L) / W)) + (t0 - m / 100 * (h - L))
+  If t > t0 Then Exit For
+ t2 = t
+Picture1.PSet (t2, L), vbBlue '井温曲线
+Next L
+
+For L = 0 To h Step 0.01 '以0.01为间隔从0循环到H
+t = t0 - m / 100 * (h - L)
+t2 = t
+Picture1.PSet (t, L), vbGreen '在x，y处画点绿线(地温曲线)
+Next L
+
+
+
+Picture1.Line (100, 400)-(120, 400), vbBlue '在这两个左边划线
+Picture1.Line (100, 500)-(120, 500), vbGreen '在这两个左边划线
+Picture1.CurrentX = 125 'X坐标
+Picture1.CurrentY = 350 'Y坐标
+Picture1.Print "井温曲线"
+Picture1.CurrentX = 125 'X坐标
+Picture1.CurrentY = 450 'Y坐标
+Picture1.Print "地温曲线"
+
+End Sub
+
+粘温曲线窗体生成代码
+
+Private Sub Command1_Click()
+
+ 'xy轴线
+ Picture1.Scale (-30, 150)-(150, -20)
+Picture1.Line (30, 0)-(90, 0)
+Picture1.Line (30, 0)-(30, 100)
+
+
+'y坐标
+For j = 0 To 100 Step 5
+ Picture1.Line (30, j)-(31, j)
+ Picture1.CurrentX = 20
+ Picture1.CurrentY = j
+ K = j * 70
+ Picture1.Print K
+Next j
+
+'x坐标
+For j1 = 3 To 9
+Picture1.Line (j1 * 10, 0)-(j1 * 10, 1)
+Picture1.CurrentX = j1 * 10 - 4
+Picture1.CurrentY = -2
+X1 = j1 * 10
+Picture1.Print X1
+Next j1
+
+'xy坐标含义
+Picture1.CurrentX = 45
+Picture1.CurrentY = -10
+Picture1.Print "t，℃"
+Picture1.CurrentX = 0
+Picture1.CurrentY = 45
+Picture1.Print "μ，mPa·s"
+
+
+Dim ylf!
+a = Val(Form1.Text18.Text)
+b = Val(Form1.Text19.Text)
+
+For t = 40 To 85 Step 0.01
+ylf = 10 ^ a / (t ^ b) / 80
+Picture1.PSet (t, ylf), vbRed
+Next t
+
+
+
+Dim ylfsj!
+For t1 = 40 To 85 Step 5
+ylfsj = Val(Form1.Text43((t1 - 40) / 5)) / 80
+Picture1.PSet (t1, ylfsj), vbBlue
+Next t1
+
+
+
+
+End Sub
+
+
+IPR曲线生成窗体
+Private Sub Command1_Click()
+Picture1.Scale (-40, 180)-(230, -25)
+Picture1.Line (0, 0)-(200, 0)
+Picture1.Line (0, 0)-(0, 170)
+
+'横坐标
+For i = 0 To 200 Step 20
+ Picture1.Line (i, 0)-(i, 5)
+ Picture1.CurrentX = i - 5
+ Picture1.CurrentY = 0
+ K = i / 4
+ Picture1.Print K
+Next i
+
+ '纵坐标
+For j = 0 To 170 Step 10
+ Picture1.Line (0, j)-(5, j)
+ Picture1.CurrentX = -10
+ Picture1.CurrentY = j + 5
+ m = j / 10
+ Picture1.Print m
+Next j
+ '坐标轴含义
+Picture1.CurrentX = 80
+Picture1.CurrentY = -8
+Picture1.Print "qo，m3/d"
+Picture1.CurrentX = -35
+Picture1.CurrentY = 80
+Picture1.Print "pwf，MPa"
+
+'新加
+Dim qotest!, prpj!, pb!, Jo!, qc!, pwf!, qo!, pwftest!, a!, b!, pwf1
+qotest = Val(Form1.Text9.Text) '试井产液量
+pwftest = Val(Form1.Text10.Text) '试井流压
+pr = Val(Form1.Text5.Text) '地层压力
+pb = Val(Form1.Text6.Text) '饱和压力
+qo = Val(Form1.Text17.Text) '设计排量
+Jo = qotest / (pr - pwftest)
+qb = Jo * (pr - pb)
+qc = Jo * pb / 1.8
+For h = 0 To pr Step 0.01
+ If h < (pr - pb) Then
+ pwf = pr - h
+ qo = Jo * (pr - pwf)
+ Picture1.PSet (qo * 4, pwf * 10), vbGreen
+ Else
+ pwf = pr - h
+ qo = qb + qc * (1 - 0.2 * (pwf / pb) - 0.8 * (pwf / pb) ^ 2)
+ Picture1.PSet (qo * 4, pwf * 10), vbGreen
+ End If
+Next h
+
+
+
+End Sub
+
+
+
+
+
