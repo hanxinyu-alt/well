@@ -6,13 +6,26 @@ from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, QH
 from PyQt5.QtCore import Qt, QPointF
 from PyQt5.QtChart import QChart, QChartView, QLineSeries, QValueAxis
 from PyQt5.QtGui import QPainter, QColor, QPen
+from PyQt5.QtWidgets import QWidget, QGridLayout, QLineEdit, QPushButton
+from manager import CalculatorManager
 
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        # ... 原有代码
+        self.calculator = CalculatorManager()
+
+        # 添加计算器按钮
+        btn_calc = QPushButton("打开计算器")
+        btn_calc.clicked.connect(self.calculator.show)
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("韩鑫宇抽油系统设计")
         self.setGeometry(100, 100, 1000, 800)
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.setAttribute(Qt.WA_TranslucentBackground)
 
         # 主窗口布局
         main_widget = QWidget()
@@ -344,14 +357,14 @@ class MainWindow(QMainWindow):
 
     def import_data(self):
         # 油层参数
-        self.edit_oil_depth.setText("1765")
+        self.edit_oil_depth.setText("2040")
         self.edit_casing_diameter.setText("190")
         self.edit_tubing_diameter.setText("88.9")
-        self.edit_bottom_temp.setText("87.6")
-        self.edit_formation_pressure.setText("16.38")
-        self.edit_saturation_pressure.setText("12.52")
-        self.edit_heat_coefficient.setText("2.83")
-        self.edit_temp_gradient.setText("3.09")
+        self.edit_bottom_temp.setText("110")
+        self.edit_formation_pressure.setText("15.2")
+        self.edit_saturation_pressure.setText("16.1")
+        self.edit_heat_coefficient.setText("2.67")
+        self.edit_temp_gradient.setText("3.11")
 
         # 测试数据
         self.edit_test_production.setText("22")
